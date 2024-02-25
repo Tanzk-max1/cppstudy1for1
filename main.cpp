@@ -93,6 +93,7 @@ int main() {
 
         switch (select) {
             case 1:
+                addPerson(&abs);
                 break;
             case 2:
                 break;
