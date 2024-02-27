@@ -230,7 +230,7 @@ int main() {
                 findPerson(&abs);
                 break;
             case 5:
-
+                modifyPerson(&abs);
                 break;
             case 6:
 
