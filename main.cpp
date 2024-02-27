@@ -79,6 +79,70 @@ void addPerson(Addressbooks *abs)
 
     }
 }
+void showPerson(Addressbooks * abs)
+{
+    if (abs->m_Size == 0)
+    {
+        cout << "当前记录为空" << endl;
+    }
+    else
+    {
+        for (int i = 0; i < abs->m_Size; i++)
+        {
+            cout << "姓名：" << abs->personArray[i].m_Name << "\t";
+            cout << "性别：" << (abs->personArray[i].m_Sex == 1 ? "男" : "女") << "\t";
+            cout << "年龄：" << abs->personArray[i].m_Age << "\t";
+            cout << "电话：" << abs->personArray[i].m_Phone << "\t";
+            cout << "住址：" << abs->personArray[i].m_Addr << endl;
+        }
+    }
+
+}
+
+int isExist(Addressbooks * abs,string name){
+    for (int i = 0; i < abs->m_Size; ++i) {
+        if (abs->personArray[i].m_Name == name){
+            return i;
+        }
+    }
+    return -1;
+}
+
+void deletePerson(Addressbooks * abs){
+    cout << "请输入你要删除的联系人" << endl;
+    string name;
+    cin >> name;
+    int ret = isExist(abs,name);
+    if(ret != -1){
+        for (int i = ret; i < abs->m_Size; ++i) {
+            abs->personArray[i] = abs->personArray[i + 1];
+        }
+        abs -> m_Size--;
+        cout << "删除成功" << endl;
+    } else{
+        cout << "查无此人" << endl;
+    }
+}
+
+void findPerson(Addressbooks *abs){
+    cout << "请输入您要查找的联系人" << endl;
+    string name ;
+    cin >> name;
+
+    int ret = isExist(abs, name);
+    if (ret != -1)
+    {
+        cout << "姓名：" << abs->personArray[ret].m_Name << "\t";
+        cout << "性别：" << abs->personArray[ret].m_Sex << "\t";
+        cout << "年龄：" << abs->personArray[ret].m_Age << "\t";
+        cout << "电话：" << abs->personArray[ret].m_Phone << "\t";
+        cout << "住址：" << abs->personArray[ret].m_Addr << endl;
+    }
+    else
+    {
+        cout << "查无此人" << endl;
+    }
+}
 
 int main() {
     int select = 0;
@@ -96,28 +160,22 @@ int main() {
                 addPerson(&abs);
                 break;
             case 2:
+                showPerson(&abs);
                 break;
             case 3:
-                cout << "hhhh" <<endl;
+                deletePerson(&abs);
                 break;
             case 4:
-                cout << "jajaj " << endl;
+                findPerson(&abs);
                 break;
             case 5:
-                cout << "happy" << endl;
+
                 break;
             case 6:
-                cout << "happy" << endl;
+
                 break;
             case 0:
                 cout << "欢迎下次使用" << endl;
-
-                cout << "欢迎下次使用" << endl;
-
-                cout << "欢迎下次使用" << endl;
-
-                cout << "欢迎下次使用" << endl;
-
                 //合计反倒是
                 return 0;
                 break;
