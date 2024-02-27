@@ -110,8 +110,8 @@ int main() {
                 cout << "happy" << endl;
                 break;
             case 0:
-                cout << "欢迎下次使用" << endl
-
+                cout << "欢迎下次使用" << endl;
+///fgyfu
                 //合计反倒是
                 return 0;
                 break;
