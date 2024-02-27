@@ -101,7 +101,7 @@ int main() {
                 cout << "hhhh" <<endl;
                 break;
             case 4:
-                cout << "jajaj " ;
+                cout << "jajaj " << endl;
                 break;
             case 5:
                 cout << "happy" << endl;
