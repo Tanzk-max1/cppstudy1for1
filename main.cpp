@@ -107,6 +107,7 @@ int main() {
                 cout << "happy" << endl;
                 break;
             case 6:
+                cout << "happy" << endl;
                 break;
             case 0:
                 cout << "欢迎下次使用" << endl;
