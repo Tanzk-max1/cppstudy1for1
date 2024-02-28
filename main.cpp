@@ -205,15 +205,17 @@ void modifyPerson(Addressbooks * abs)
 
 }
 
+void cleanPerson(Addressbooks *abs){
+    abs->m_Size = 0;
+    cout << "通讯录已清空" << endl;
+}
+
 int main() {
+    Addressbooks abs;
+    abs.m_Size = 0;//初始化通讯录中人数
     int select = 0;
     while(true){
         showMenu();
-        Addressbooks abs;
-        abs.m_Size = 0;//初始化通讯录中人数
-
-
-
         cin >> select;
 
         switch (select) {
@@ -233,7 +235,7 @@ int main() {
                 modifyPerson(&abs);
                 break;
             case 6:
-
+                cleanPerson(&abs);
                 break;
             case 0:
                 cout << "欢迎下次使用" << endl;
@@ -243,9 +245,7 @@ int main() {
         }
     }
 
-
-
-
     return 0;
 }
+
 
